@@ -33,7 +33,12 @@ npx playwright test
 
 ### Setup & run from your own Playwright
 
-1. Create json file `agentq.config.json` based on your account profile (you must signin first)
+1. Install AgentQ package for Playwright
+```bash
+npm install agentq-playwright
+```
+
+2. Create json file `agentq.config.json` based on your account profile (you must signin first)
 ```json
 {
   "TOKEN": "apiKey"
