@@ -16,12 +16,17 @@ git clone https://github.com/agentq-ai/playwright_typescript.git
 npm install
 ```
 
-3. Update apiKey on json file `agentq.config.json` based on your account profile (you must signin first)
+3. Install AgentQ package for Playwright
+```bash
+npm install agentq-playwright
+```
+
+4. Update apiKey on json file `agentq.config.json` based on your account profile (you must signin first)
 ```bash
 export TOKEN="apiKey"
 ```
 
-4. Run your test
+5. Run your test
 ```bash
 npm run test
 ```
@@ -45,7 +50,7 @@ npm install agentq-playwright
 }
 ```
 
-2. Below is sample usage q() funciton (using POM)
+3. Below is sample usage q() funciton (using POM)
 
 - login.page.ts on pages file
 ```typescript
