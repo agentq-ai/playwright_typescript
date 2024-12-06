@@ -1,0 +1,16 @@
+{
+  "name": "playwright_typescript",
+  "version": "1.0.0",
+  "description": "Sample integrate Playwright (typescript) with AgentQ AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "agentq.id",
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "^1.49.0",
+    "agentq-playwright": "^1.0.21"
+  }
+}
