@@ -1,13 +1,19 @@
 import { q } from 'agentq-playwright';
+import { type Locator, type Page } from '@playwright/test';
+
 
 export class LoginPage {
+  readonly page: Page;
+  readonly error_text: Locator;
 
-  constructor(private page: any) {
+  constructor(page: Page) {
+    this.page = page;
+    this.error_text = page.locator('[data-test="error"]')
   }
 
   async doLogin() {
-    await q('User fill "username" field with "standard_user"', this.page);
-    await q('User fill "password" field with "secret_sauce"', this.page);
-    await q('User click "login" button', this.page);
+    await q('User fill "username" field with "standard_user"');
+    await q('User fill "password" field with "standard_user"');
+    await q('User click "login" button');
   }
 }

@@ -11,12 +11,12 @@ Sample integrate Playwright (typescript) with AgentQ AI.
 git clone https://github.com/agentq-ai/playwright_typescript.git
 ```
 
-2. install node modules
+2. install node modules 
 ```bash
 npm install
 ```
 
-3. Install AgentQ package for Playwright
+3. Install AgentQ package for Playwright using npm (applicable using yarn as well)
 ```bash
 npm install agentq-playwright
 ```
@@ -38,7 +38,7 @@ npx playwright test
 
 ### Setup & run from your own Playwright
 
-1. Install AgentQ package for Playwright
+1. Install AgentQ package for Playwright using npm (applicable using yarn as well)
 ```bash
 npm install agentq-playwright
 ```
@@ -50,35 +50,63 @@ npm install agentq-playwright
 }
 ```
 
-3. Below is sample usage q() funciton (using POM)
+3. Below is sample usage q() funciton (using POM and non-POM)
+
+#### non-POM
+
+- login.spec.ts
+```typescript
+import { q, test } from 'agentq-playwright';
+import { expect } from '@playwright/test';
+
+test.describe('Login', () => {
+  test('login success', async ({ page }) => {
+  await page.goto('https://www.saucedemo.com/');
+  await q('user fill "username" field with "standard_user"');
+  await q('user fill "password" field with "standard_user"');
+  await q('User click "login" button');
+  });
+});
+```
+
+
+#### POM
 
 - login.page.ts on pages file
 ```typescript
 import { q } from 'agentq-playwright';
+import { type Locator, type Page } from '@playwright/test';
+
 
 export class LoginPage {
+  readonly page: Page;
+  readonly error_text: Locator;
 
-  constructor(private page: any) {
+  constructor(page: Page) {
+    this.page = page;
+    this.error_text = page.locator('[data-test="error"]')
   }
 
   async doLogin() {
-    await q('User fill "username" field with "standard_user"', this.page);
-    await q('User fill "password" field with "secret_sauce"', this.page);
-    await q('User click "login" button', this.page);
+    await q('User fill "username" field with "standard_user"');
+    await q('User fill "password" field with "standard_user"');
+    await q('User click "login" button');
   }
 }
 ```
 
-- login.spec.ts
+- login_fail.spec.ts
 ```typescript
-import { test } from "@playwright/test";
+import { test } from "agentq-playwright";
+import { expect } from "@playwright/test";
 import { LoginPage } from '../pages/login.page';
 
 test.describe('Login', () => {
-  test('login success', async ({ page }) => {
+  test('login failed', async ({ page }) => {
     const loginpage = new LoginPage(page);
     await page.goto('https://www.saucedemo.com');
     await loginpage.doLogin();
+    await expect(loginpage.error_text).toBeVisible();
   });
 });
 ```

@@ -11,6 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "@playwright/test": "^1.49.0",
-    "agentq-playwright": "^1.0.21"
+    "agentq-playwright": "^1.0.24"
   }
 }
