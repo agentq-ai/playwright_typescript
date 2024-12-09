@@ -3,6 +3,7 @@
 Sample integrate Playwright (typescript) with AgentQ AI.
 
 ## Installation & Usage
+<br />
 
 ### Setup & run from scratch (if you need start from sample)
 
@@ -34,7 +35,7 @@ or
 ```bash
 npx playwright test
 ```
-
+<br />
 
 ### Setup & run from your own Playwright
 
@@ -110,6 +111,7 @@ test.describe('Login', () => {
   });
 });
 ```
+<br />
 
 ## Plans and Rate Limits
 
