@@ -51,6 +51,14 @@ npm install agentq-playwright
 }
 ```
 
+3. Create .env file and add your apiKey
+```bash
+AGENTQ_PROJECT_ID=project id on agentq app
+AGENTQ_TESTRUN_ID=testrun id on agentq app
+AGENTQ_EMAIL=credential email on agentq app
+AGENTQ_PASSWORD=credential password on agentq app
+```
+
 3. Below is sample usage q() funciton (using POM and non-POM)
 
 #### non-POM

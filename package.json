@@ -10,7 +10,7 @@
   "author": "agentq.id",
   "license": "MIT",
   "dependencies": {
-    "@playwright/test": "^1.49.0",
-    "agentq-playwright": "^1.0.24"
+    "@playwright/test": "^1.52.0",
+    "agentq-playwright": "^1.0.58"
   }
 }
