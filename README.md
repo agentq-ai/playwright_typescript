@@ -121,6 +121,9 @@ test.describe('Login', () => {
 ```
 <br />
 
+npx agentq-pull-testcase -- --tcid=1       
+npx agentq-pull-testsuite -- --testrunid=e7cc2409-6bc0-49d3-923e-e671aa45f344
+
 ## Plans and Rate Limits
 
 - Free: Free of charge

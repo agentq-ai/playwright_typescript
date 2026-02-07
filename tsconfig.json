@@ -1,21 +1,20 @@
 {
-    "compilerOptions": 
-    {
-      "target": "ES6",
-      "lib": ["esnext"],
-      "preserveConstEnums": true,
-      "moduleResolution": "node",
-      "strict": true,
-      "sourceMap": true,
-      "module": "esnext",
-      "types": [
-        "node"
-      ],
-      "resolveJsonModule": true,
-      "esModuleInterop": true
-    },
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "sourceMap": true,
+    "module": "esnext",
+    "types": [
+      "node"
+    ],
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
+  }
 }
-  
